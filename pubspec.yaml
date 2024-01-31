@@ -32,9 +32,33 @@ dependencies:
     sdk: flutter
 
 
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
+  audio_service: ^0.18.12
+  audio_session: ^0.1.13
+  cached_network_image: ^3.3.1
+  catcher_2: ^1.1.0
   cupertino_icons: ^1.0.2
+  curved_navigation_bar: ^1.0.3
+  dart_discord_rpc:
+    git:
+      url: https://github.com/Tommypop2/dart_discord_rpc.git
+  device_info_plus: ^9.1.1
+  device_preview: ^1.1.0
+  fl_query: ^1.0.0
+  flutter_displaymode: ^0.6.0
+  flutter_hooks: ^0.20.0
+  flutter_riverpod: ^2.4.9
+  dio: ^5.3.2
+  go_router: ^11.1.2
+  hooks_riverpod: ^2.4.9
+  media_kit: ^1.1.10
+  media_kit_libs_audio: ^1.0.4
+  metadata_god: ^0.5.2+1
+  path: ^1.8.0
+  path_provider: ^2.0.8
+  shared_preferences: ^2.0.11
+  system_theme: ^2.1.0
+  universal_platform: ^1.0.0+1
+  window_manager: ^0.3.8
 
 dev_dependencies:
   flutter_test:
@@ -49,6 +73,8 @@ dev_dependencies:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
+dependency_overrides:
+  system_tray: ^2.0.3
 
 # The following section is specific to Flutter packages.
 flutter:
