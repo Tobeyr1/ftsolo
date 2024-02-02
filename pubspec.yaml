@@ -46,18 +46,28 @@ dependencies:
   fl_query: ^1.0.0
   flutter_displaymode: ^0.6.0
   flutter_hooks: ^0.20.0
+  flutter_localizations:
+    sdk: flutter
+  flutter_secure_storage: ^9.0.0
   flutter_riverpod: ^2.4.9
+  freezed_annotation: ^2.4.1
   dio: ^5.3.2
   go_router: ^11.1.2
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
   hooks_riverpod: ^2.4.9
+  intl: ^0.18.0
   media_kit: ^1.1.10
   media_kit_libs_audio: ^1.0.4
   metadata_god: ^0.5.2+1
+  palette_generator: ^0.3.3+3
   path: ^1.8.0
   path_provider: ^2.0.8
+  retrofit: '>=4.0.0 <5.0.0'
   shared_preferences: ^2.0.11
   system_theme: ^2.1.0
   universal_platform: ^1.0.0+1
+  uuid: ^4.3.3
   window_manager: ^0.3.8
 
 dev_dependencies:
@@ -69,7 +79,12 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
+  build_runner: ^2.3.3
+  hive_generator: ^2.0.0
+  json_serializable: ^6.7.1
+  freezed: ^2.4.2
   flutter_lints: ^2.0.0
+  retrofit_generator: '>=7.0.0 <8.0.0'
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -78,10 +93,7 @@ dependency_overrides:
 
 # The following section is specific to Flutter packages.
 flutter:
-
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
+  generate: true
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
