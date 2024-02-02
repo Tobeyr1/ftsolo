@@ -15,33 +15,34 @@
 #include <window_manager/window_manager_plugin.h>
 
 void fl_register_plugins(FlPluginRegistry *registry) {
-  g_autoptr(FlPluginRegistrar)
-  dart_discord_rpc_registrar =
-          fl_plugin_registry_get_registrar_for_plugin(registry, "DartDiscordRpcPlugin");
-  dart_discord_rpc_plugin_register_with_registrar(dart_discord_rpc_registrar);
-  g_autoptr(FlPluginRegistrar)
-  flutter_secure_storage_linux_registrar =
-          fl_plugin_registry_get_registrar_for_plugin(registry, "FlutterSecureStorageLinuxPlugin");
-  flutter_secure_storage_linux_plugin_register_with_registrar(
-          flutter_secure_storage_linux_registrar);
-  g_autoptr(FlPluginRegistrar)
-  media_kit_libs_linux_registrar =
-          fl_plugin_registry_get_registrar_for_plugin(registry, "MediaKitLibsLinuxPlugin");
-  media_kit_libs_linux_plugin_register_with_registrar(media_kit_libs_linux_registrar);
-  g_autoptr(FlPluginRegistrar)
-  screen_retriever_registrar =
-          fl_plugin_registry_get_registrar_for_plugin(registry, "ScreenRetrieverPlugin");
-  screen_retriever_plugin_register_with_registrar(screen_retriever_registrar);
-  g_autoptr(FlPluginRegistrar)
-  system_theme_registrar =
-          fl_plugin_registry_get_registrar_for_plugin(registry, "SystemThemePlugin");
-  system_theme_plugin_register_with_registrar(system_theme_registrar);
-  g_autoptr(FlPluginRegistrar)
-  system_tray_registrar =
-          fl_plugin_registry_get_registrar_for_plugin(registry, "SystemTrayPlugin");
-  system_tray_plugin_register_with_registrar(system_tray_registrar);
-  g_autoptr(FlPluginRegistrar)
-  window_manager_registrar =
-          fl_plugin_registry_get_registrar_for_plugin(registry, "WindowManagerPlugin");
-  window_manager_plugin_register_with_registrar(window_manager_registrar);
+    g_autoptr(FlPluginRegistrar)
+    dart_discord_rpc_registrar =
+            fl_plugin_registry_get_registrar_for_plugin(registry, "DartDiscordRpcPlugin");
+    dart_discord_rpc_plugin_register_with_registrar(dart_discord_rpc_registrar);
+    g_autoptr(FlPluginRegistrar)
+    flutter_secure_storage_linux_registrar =
+            fl_plugin_registry_get_registrar_for_plugin(registry,
+                                                        "FlutterSecureStorageLinuxPlugin");
+    flutter_secure_storage_linux_plugin_register_with_registrar(
+            flutter_secure_storage_linux_registrar);
+    g_autoptr(FlPluginRegistrar)
+    media_kit_libs_linux_registrar =
+            fl_plugin_registry_get_registrar_for_plugin(registry, "MediaKitLibsLinuxPlugin");
+    media_kit_libs_linux_plugin_register_with_registrar(media_kit_libs_linux_registrar);
+    g_autoptr(FlPluginRegistrar)
+    screen_retriever_registrar =
+            fl_plugin_registry_get_registrar_for_plugin(registry, "ScreenRetrieverPlugin");
+    screen_retriever_plugin_register_with_registrar(screen_retriever_registrar);
+    g_autoptr(FlPluginRegistrar)
+    system_theme_registrar =
+            fl_plugin_registry_get_registrar_for_plugin(registry, "SystemThemePlugin");
+    system_theme_plugin_register_with_registrar(system_theme_registrar);
+    g_autoptr(FlPluginRegistrar)
+    system_tray_registrar =
+            fl_plugin_registry_get_registrar_for_plugin(registry, "SystemTrayPlugin");
+    system_tray_plugin_register_with_registrar(system_tray_registrar);
+    g_autoptr(FlPluginRegistrar)
+    window_manager_registrar =
+            fl_plugin_registry_get_registrar_for_plugin(registry, "WindowManagerPlugin");
+    window_manager_plugin_register_with_registrar(window_manager_registrar);
 }

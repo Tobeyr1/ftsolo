@@ -8,6 +8,7 @@ import 'package:flutter_displaymode/flutter_displaymode.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:ftsolo/hooks/configurators/use_get_storage_perms.dart';
 import 'package:ftsolo/l10n/l10n.dart';
 import 'package:ftsolo/provider/palette_provider.dart';
 import 'package:ftsolo/provider/persisted_state_notifier.dart';
@@ -95,11 +96,11 @@ Future<void> main() async {
       releaseConfig: Catcher2Options(SilentReportMode(), [ConsoleHandler()]),
       runAppFunction: () {
         runApp(DevicePreview(
-          enabled: true,
+          enabled: !kReleaseMode,
           data: const DevicePreviewData(
-              isEnabled: true, orientation: Orientation.portrait),
+              isEnabled: !kReleaseMode, orientation: Orientation.portrait),
           builder: (ctx) {
-            return ProviderScope(
+            return const ProviderScope(
               child: FtSolo(),
             );
           },
@@ -133,6 +134,8 @@ class FtSoloState extends ConsumerState<FtSolo> {
         ref.watch(userPreferencesProvider.select((value) => value.locale));
     final paletteColor = ref
         .watch(paletteProvider.select((value) => value?.dominantColor?.color));
+
+    useGetStoragePermissions(ref);
 
     final lightTheme = useMemoized(
         () =>
