@@ -20,6 +20,7 @@ import 'package:ftsolo/sqlite/source_match.dart';
 import 'package:ftsolo/themes/theme.dart';
 import 'package:ftsolo/utils/devices_util.dart';
 import 'package:hive/hive.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:media_kit/media_kit.dart';
 import 'package:metadata_god/metadata_god.dart';
@@ -67,6 +68,7 @@ Future<void> main() async {
 
   final hiveCacheDir =
       kIsWeb ? null : (await getApplicationSupportDirectory()).path;
+  await Hive.initFlutter(hiveCacheDir);
 
   //TODO: hive
   /*await QueryClient.initialize(
