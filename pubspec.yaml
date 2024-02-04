@@ -48,6 +48,7 @@ dependencies:
   flutter_hooks: ^0.20.0
   flutter_localizations:
     sdk: flutter
+  flutter_native_splash: ^2.3.10
   flutter_secure_storage: ^9.0.0
   flutter_riverpod: ^2.4.9
   freezed_annotation: ^2.4.1
@@ -84,6 +85,7 @@ dev_dependencies:
   hive_generator: ^2.0.0
   json_serializable: ^6.7.1
   freezed: ^2.4.2
+  flutter_launcher_icons: ^0.13.1
   flutter_lints: ^2.0.0
   retrofit_generator: '>=7.0.0 <8.0.0'
 
@@ -96,6 +98,8 @@ dependency_overrides:
 flutter:
   generate: true
   uses-material-design: true
+  assets:
+    - assets/
 
   # To add assets to your application, add an assets section, like this:
   # assets:
@@ -127,3 +131,26 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+flutter_launcher_icons:
+  ios: true
+  android: true
+  image_path: "assets/ftsolo-logo.png"
+  adaptive_icon_foreground: "assets/ftsolo-logo-foreground.jpg"
+  adaptive_icon_background: "#242832"
+  windows:
+    generate: true
+    image_path: "assets/ftsolo-logo.png"
+    icon_size: 48 # min:48, max:256, default: 48
+  macos:
+    generate: true
+    image_path: "assets/ftsolo-logo.png"
+
+flutter_native_splash:
+  background_image: assets/bengali-patterns-bg.jpg
+  image: assets/ftsolo-logo.png
+  branding: assets/branding.png
+  android_12:
+    image: assets/ftsolo-logo_android12.png
+    branding: assets/branding.png
+    color: "#000000"
+    icon_background_color: "#000000"

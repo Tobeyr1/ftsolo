@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_displaymode/flutter_displaymode.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ftsolo/hooks/configurators/use_get_storage_perms.dart';
 import 'package:ftsolo/l10n/l10n.dart';
@@ -30,6 +31,7 @@ import 'package:window_manager/window_manager.dart';
 
 Future<void> main() async {
   final widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   MediaKit.ensureInitialized();
   // force High Refresh Rate on some Android devices (like One Plus)
   if (DevicesOS.isAndroid) {
@@ -136,6 +138,15 @@ class FtSoloState extends ConsumerState<FtSolo> {
         .watch(paletteProvider.select((value) => value?.dominantColor?.color));
 
     useGetStoragePermissions(ref);
+
+    useEffect(() {
+      FlutterNativeSplash.remove();
+      return () {
+        /// For enabling hot reload for audio player
+        if (!kDebugMode) return;
+        //TODO audioPlayer
+      };
+    });
 
     final lightTheme = useMemoized(
         () =>

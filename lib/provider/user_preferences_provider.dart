@@ -102,14 +102,14 @@ class UserPreferencesNotifier extends PersistedStateNotifier<UserPreferences> {
 
   Future<String> _getDefaultDownloadDirectory() async {
     //TODO: 路径
-    if (kIsAndroid) return "/storage/emulated/0/Download/Ftsolo";
+    if (kIsAndroid) return "/storage/emulated/0/Download/ftsolo";
 
     if (kIsMacOS) {
       return path.join((await getLibraryDirectory()).path, "Caches");
     }
 
     return getDownloadsDirectory().then((dir) {
-      return path.join(dir!.path, "Ftsolo");
+      return path.join(dir!.path, "ftsolo");
     });
   }
 
