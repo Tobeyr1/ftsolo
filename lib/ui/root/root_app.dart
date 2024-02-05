@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:ftsolo/provider/persisted_state_notifier.dart';
+import 'package:ftsolo/ui/component/ft_sidebar.dart';
+import 'package:ftsolo/utils/devices_util.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -45,6 +47,39 @@ class FtRootApp extends HookConsumerWidget {
       return null;
     }, [backgroundColor]);
 
-    return Scaffold();
+    void onSelectIndexChanged(int d) {
+      final invertedRouteMap =
+          rootPaths.map((key, value) => MapEntry(value, key));
+      if (context.mounted) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          GoRouter.of(context).go(invertedRouteMap[d]!);
+        });
+      }
+    }
+
+    return Scaffold(
+      body: FtSidebar(
+        selectedIndex: rootPaths[location],
+        onSelectedIndexChanged: onSelectIndexChanged,
+        child: child,
+      ),
+      extendBody: true,
+      drawerScrimColor: Colors.transparent,
+      endDrawer: DevicesOS.isDesktop
+          ? Container(
+              constraints: const BoxConstraints(maxWidth: 800),
+              decoration: BoxDecoration(
+                boxShadow: theme.brightness == Brightness.light
+                    ? null
+                    : kElevationToShadow[8],
+              ),
+              margin: const EdgeInsets.only(
+                top: 40,
+                bottom: 100,
+              ),
+              child: Container(), //TODO: player_queue
+            )
+          : null,
+    );
   }
 }

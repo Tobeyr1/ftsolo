@@ -93,16 +93,15 @@ Future<void> main() async {
     path: hiveCacheDir,
   );
   await PersistedStateNotifier.initializeBoxes(path: hiveCacheDir);
-
   Catcher2(
       enableLogger: true,
       debugConfig: Catcher2Options(DialogReportMode(), [ConsoleHandler()]),
       releaseConfig: Catcher2Options(SilentReportMode(), [ConsoleHandler()]),
       runAppFunction: () {
         runApp(DevicePreview(
-          enabled: !kReleaseMode,
+          enabled: !kReleaseMode && !DevicesOS.isMobile,
           data: const DevicePreviewData(
-              isEnabled: !kReleaseMode, orientation: Orientation.portrait),
+              isEnabled: false, orientation: Orientation.portrait),
           builder: (ctx) {
             return const ProviderScope(
               child: FtSolo(),
@@ -185,6 +184,9 @@ class FtSoloState extends ConsumerState<FtSolo> {
       themeMode: themeMode,
       theme: lightTheme,
       darkTheme: darkTheme,
+      actions: {
+        ...WidgetsApp.defaultActions,
+      },
     );
   }
 

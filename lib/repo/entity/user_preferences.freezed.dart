@@ -21,49 +21,33 @@ UserPreferences _$UserPreferencesFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$UserPreferences {
   SourceQualities get audioQuality => throw _privateConstructorUsedError;
-
   bool get albumColorSync => throw _privateConstructorUsedError;
-
   bool get amoledDarkTheme => throw _privateConstructorUsedError;
-
   bool get checkUpdate => throw _privateConstructorUsedError;
-
   bool get normalizeAudio => throw _privateConstructorUsedError;
-
   bool get showSystemTrayIcon => throw _privateConstructorUsedError;
-
   bool get skipNonMusic => throw _privateConstructorUsedError;
-
   bool get systemTitleBar => throw _privateConstructorUsedError;
-
   CloseBehavior get closeBehavior => throw _privateConstructorUsedError;
-
   @JsonKey(
       defaultValue: UserPreferences._defaultAccentColorScheme,
       fromJson: UserPreferences._accentColorSchemeFromJson,
       toJson: UserPreferences._accentColorSchemeToJson,
       readValue: UserPreferences._accentColorSchemeReadValue)
   FtSoloColor get accentColorScheme => throw _privateConstructorUsedError;
-
   LayoutMode get layoutMode => throw _privateConstructorUsedError;
-
   @JsonKey(
       defaultValue: UserPreferences._defaultLocaleValue,
       toJson: UserPreferences._localeToJson,
       fromJson: UserPreferences._localeFromJson,
       readValue: UserPreferences._localeReadValue)
   Locale get locale => throw _privateConstructorUsedError;
-
   String get downloadLocation => throw _privateConstructorUsedError;
-
   String get pipedInstance => throw _privateConstructorUsedError;
-
   ThemeMode get themeMode => throw _privateConstructorUsedError;
-
   bool get discordPresence => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $UserPreferencesCopyWith<UserPreferences> get copyWith =>
       throw _privateConstructorUsedError;
@@ -74,7 +58,6 @@ abstract class $UserPreferencesCopyWith<$Res> {
   factory $UserPreferencesCopyWith(
           UserPreferences value, $Res Function(UserPreferences) then) =
       _$UserPreferencesCopyWithImpl<$Res, UserPreferences>;
-
   @useResult
   $Res call(
       {SourceQualities audioQuality,
@@ -112,7 +95,6 @@ class _$UserPreferencesCopyWithImpl<$Res, $Val extends UserPreferences>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -211,7 +193,6 @@ abstract class _$$UserPreferencesImplCopyWith<$Res>
   factory _$$UserPreferencesImplCopyWith(_$UserPreferencesImpl value,
           $Res Function(_$UserPreferencesImpl) then) =
       __$$UserPreferencesImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -569,31 +550,22 @@ abstract class _UserPreferences implements UserPreferences {
 
   @override
   SourceQualities get audioQuality;
-
   @override
   bool get albumColorSync;
-
   @override
   bool get amoledDarkTheme;
-
   @override
   bool get checkUpdate;
-
   @override
   bool get normalizeAudio;
-
   @override
   bool get showSystemTrayIcon;
-
   @override
   bool get skipNonMusic;
-
   @override
   bool get systemTitleBar;
-
   @override
   CloseBehavior get closeBehavior;
-
   @override
   @JsonKey(
       defaultValue: UserPreferences._defaultAccentColorScheme,
@@ -601,10 +573,8 @@ abstract class _UserPreferences implements UserPreferences {
       toJson: UserPreferences._accentColorSchemeToJson,
       readValue: UserPreferences._accentColorSchemeReadValue)
   FtSoloColor get accentColorScheme;
-
   @override
   LayoutMode get layoutMode;
-
   @override
   @JsonKey(
       defaultValue: UserPreferences._defaultLocaleValue,
@@ -612,19 +582,14 @@ abstract class _UserPreferences implements UserPreferences {
       fromJson: UserPreferences._localeFromJson,
       readValue: UserPreferences._localeReadValue)
   Locale get locale;
-
   @override
   String get downloadLocation;
-
   @override
   String get pipedInstance;
-
   @override
   ThemeMode get themeMode;
-
   @override
   bool get discordPresence;
-
   @override
   @JsonKey(ignore: true)
   _$$UserPreferencesImplCopyWith<_$UserPreferencesImpl> get copyWith =>

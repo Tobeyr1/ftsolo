@@ -2,7 +2,7 @@ import 'package:catcher_2/core/catcher_2.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:ftsolo/ui/component/ft_page_slide_animation.dart';
 import 'package:ftsolo/ui/home/home_page.dart';
-import 'package:ftsolo/ui/root_app.dart';
+import 'package:ftsolo/ui/root/root_app.dart';
 import 'package:go_router/go_router.dart';
 
 final rootNavigatorKey = Catcher2.navigatorKey;
