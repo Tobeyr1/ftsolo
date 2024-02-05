@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:ftsolo/ui/component/ft_page_slide_animation.dart';
 import 'package:ftsolo/ui/home/home_page.dart';
 import 'package:ftsolo/ui/root/root_app.dart';
+import 'package:ftsolo/ui/settings/settings_page.dart';
 import 'package:go_router/go_router.dart';
 
 final rootNavigatorKey = Catcher2.navigatorKey;
@@ -15,6 +16,11 @@ final router = GoRouter(navigatorKey: rootNavigatorKey, routes: [
         GoRoute(
           path: "/",
           pageBuilder: (ctx, state) => const FtSoloPage(child: FtHomePage()),
+        ),
+        GoRoute(
+          path: "/settings",
+          pageBuilder: (ctx, state) =>
+              const FtSoloPage(child: FtSettingsPage()),
         ),
       ]),
 ]);
